@@ -60,7 +60,7 @@ async function onSearch() {
   if (pokeName.value === "") {
     onInit();
   } else {
-    const pokemon = await fetchDataByName(pokeName.value);
+    const pokemon = await fetchDataByName(pokeName.value.toLowerCase());
     createPokemon(pokemon);
   }
 }
