@@ -1,3 +1,15 @@
+const types = [
+  "grass",
+  "fire",
+  "water",
+  "normal",
+  "bug",
+  "electric",
+  "ghost",
+  "psychic",
+  "rock",
+];
+
 async function fetchData(pokeNumber) {
   const response = await fetch(
     "https://pokeapi.co/api/v2/pokemon/" + pokeNumber
@@ -13,8 +25,6 @@ async function fetchDataByName(pokeName) {
 }
 
 async function createPokemon(pokemon) {
-  // const pokemon = await fetchData(pokeNumber);
-
   const container = document.getElementById("container");
   const card = document.createElement("div");
   const code = document.createElement("h2");
@@ -25,11 +35,13 @@ async function createPokemon(pokemon) {
   card.className = "card";
   bottom.className = "card-bottom";
   code.textContent = `#${pokemon.order}`;
-  name.textContent = pokemon.name;
+  name.textContent = await capitalizeFirstLetter(pokemon.name);
   sprite.src = pokemon.sprites.front_default;
 
+  const typeClass = await getType(pokemon);
+  bottom.className = typeClass;
   bottom.appendChild(name);
-  bottom.style = "background-color: red";
+  await setStyle(typeClass, card, code);
 
   card.appendChild(code);
   card.appendChild(sprite);
@@ -37,6 +49,64 @@ async function createPokemon(pokemon) {
   container.appendChild(card);
 
   document.body.appendChild(container);
+}
+
+async function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+async function setStyle(type, card, code) {
+  switch (type) {
+    case "fire":
+      card.style = "border-color: #F57D31";
+      code.style = "color: #F57D31";
+      break;
+    case "grass":
+      card.style = "border-color: #74CB48";
+      code.style = "color: #74CB48";
+      break;
+    case "water":
+      card.style = "border-color: #6493EB";
+      code.style = "color: #6493EB";
+      break;
+    case "bug":
+      card.style = "border-color: #A7B723";
+      code.style = "color: #A7B723";
+      break;
+    case "normal":
+      card.style = "border-color: #AAA67F";
+      code.style = "color: #AAA67F";
+      break;
+    case "electric":
+      card.style = "border-color: #F9CF30";
+      code.style = "color: #F9CF30";
+      break;
+    case "ghost":
+      card.style = "border-color: #70559B";
+      code.style = "color: #70559B";
+      break;
+    case "psychic":
+      card.style = "border-color: #FB5584";
+      code.style = "color: #FB5584";
+      break;
+    case "rock":
+      card.style = "border-color: #B69E31";
+      code.style = "color: #B69E31";
+      break;
+
+    default:
+      break;
+  }
+
+}
+
+async function getType(pokemon) {
+  const type = pokemon.types[0].type.name;
+  if (types.includes(type)) {
+    return type;
+  }
+
+  return "normal";
 }
 
 async function onInit() {
@@ -55,7 +125,7 @@ function removeAllChildNodes(parent) {
 async function onSearch() {
   const container = document.querySelector("#container");
   removeAllChildNodes(container);
-  
+
   var pokeName = document.getElementById("pokeSearch");
   if (pokeName.value === "") {
     onInit();
