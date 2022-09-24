@@ -1,0 +1,70 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+    font-family: PoppinsBold;
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+div {
+    font-family: "Poppins";
+    width: 360px;
+    height: 500px;
+    background-color: blue;
+    border: 1px solid;
+    border-radius: 8px;
+    position: relative;
+}
+
+.head {
+    font-family: "PoppinsBold";
+    display: flex;
+    flex-direction: row;
+    float: left;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.head span {
+    padding-left: 25px;
+    padding-top: 24px;
+}
+
+.back {
+    width: 18px;
+}
+
+.name {
+    width: 220px;
+}
+
+.code {
+    padding-top: 24px;
+    padding-right: 24px;
+    width: 35px;
+}
+
+.about {
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    width: 350px;
+    height: 315px;
+    margin-top: 180px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.pokemon {
+    position: absolute;
+    left: 80px;
+    right: 0%;
+    top: -110px;
+    bottom: 0%;
+    background: url(../images/charmander.svg);
+    background-repeat: no-repeat;
+}
+
