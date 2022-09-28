@@ -1,103 +1,156 @@
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+  font-family: Poppins;
+  src: url(../fonts/Poppins/Poppins-Regular.ttf);
 }
 
 @font-face {
-    font-family: PoppinsBold;
-    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+  font-family: PoppinsBold;
+  src: url(../fonts/Poppins/Poppins-Bold.ttf);
 }
 
-.master {
-    font-family: "Poppins";
-    width: 360px;
-    height: 500px;
-    background-color: blue;
-    border: 1px solid;
-    border-radius: 8px;
-    position: relative;
+.page {
+  width: 100%;
+  padding: 10px;
 }
 
-.head {
-    font-family: "PoppinsBold";
-    display: flex;
-    flex-direction: row;
-    float: left;
-    width: 100%;
-    color: #FFFFFF;
+.card {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 360px;
+  height: 600px;
+  background-color: #74cb48;
+  border-radius: 8px;
+
+  background-image: url("/app/images/Pokeball_detail.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+
+  display: flex;
+  justify-content: center;
 }
 
-.head span {
-    padding-left: 25px;
-    padding-top: 15px;
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
 }
 
-.back {
-    background: url(../images/Vector.svg);
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 30px;
-    height: 17.3px;
-    left: 10px;
-    top: 25px;
-    margin-left: 15px;
+.body {
+  font-family: "Poppins";
+  background-color: whitesmoke;
+  border-radius: 8px;
+  z-index: 2;
+  position: absolute;
+  top: 30%;
+  height: 416px;
+  width: 352px;
+
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
 }
 
-.name {
-    font-size: 24px;
-    width: 220px;
-    margin-left: 50px;
+.body > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.code {
-    padding-top: 24px;
-    padding-right: 24px;
-    width: 35px;
-    font-size: 12px;
+.pokeType {
+  /* Auto layout */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  padding: 2px 8px;
+
+  /* width: 46px;
+    height: 20px; */
+
+  /* Type - Grass */
+
+  background: #74cb48;
+  border-radius: 10px;
+  width: 46px;
+  height: 20px;
 }
 
-.about {
-    background: #FFFFFF;
-    border-radius: 8px;
+.pokeHeader {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #74cb48;
 
-    position: absolute;
-    width: 350px;
-    height: 315px;
-    margin-top: 180px;
-    margin-right: 5px;
-    margin-left: 5px;
-    align-items: center;
-    justify-content: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
-.pokemon {
-    position: absolute;
-    left: 80px;
-    right: 0%;
-    top: -110px;
-    bottom: 0%;
-    background: url(../images/charmander.svg);
-    background-repeat: no-repeat;
+.pokeChars > div {
+  display: flex;
+  flex-direction: row;
+  width: 352px;
 }
 
-.type {
-    display: flex;
-    flex-direction: column;
-    padding: 2px 8px;
-    background: #F57D31;
-    border-radius: 10px;
-    width: 25px;
-    height: 20px;
-    align-items: center;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 10px;
-
-    color: #FFFFFF;
+.pokeChars > div > div {
+  display: flex;
+  flex-direction: column;
 }
 
+.pokeChars > div > div > div > span {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+  color: #212121;
+  
+}
+
+.pokeChars > div > div > img {
+  padding-right: 1px;
+}
+
+.pokeDetailsInfo {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  padding-top: 10px;
+}
+
+.separateBorder {
+    padding-left: 30px;
+    width: 1px;
+    border-right: 1px solid #E0E0E0;
+
+}
+
+.image {
+  position: absolute;
+  z-index: 3;
+  left: 0%;
+  right: 0%;
+  top: 10%;
+  bottom: 0%;
+
+  background: url(../images/bulbasaur.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+div > span {
+  font-family: "PoppinsBold";
+  color: white;
+}
