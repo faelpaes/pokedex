@@ -62,21 +62,25 @@
 }
 
 .pokeType {
-  /* Auto layout */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokeType > span {
   padding: 2px 8px;
-
-  /* width: 46px;
-    height: 20px; */
-
-  /* Type - Grass */
 
   background: #74cb48;
   border-radius: 10px;
   width: 46px;
   height: 20px;
+
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
 }
 
 .pokeHeader {
@@ -85,7 +89,6 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  /* identical to box height, or 114% */
 
   display: flex;
   align-items: center;
@@ -93,18 +96,31 @@
   color: #74cb48;
 
   padding-top: 18px;
-  padding-bottom: 18px;
+
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokeChars {
+  width: 100%;
 }
 
 .pokeChars > div {
   display: flex;
   flex-direction: row;
-  width: 352px;
+  align-items: center;
+  justify-content: center;
 }
 
 .pokeChars > div > div {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+}
+
+.pokeChars > div > div > div > img {
+  vertical-align: middle;
 }
 
 .pokeChars > div > div > div > span {
@@ -114,27 +130,12 @@
   font-size: 10px;
   line-height: 16px;
   color: #212121;
-  
-}
-
-.pokeChars > div > div > img {
-  padding-right: 1px;
 }
 
 .pokeDetailsInfo {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
   font-size: 8px;
   line-height: 12px;
   padding-top: 10px;
-}
-
-.separateBorder {
-    padding-left: 30px;
-    width: 1px;
-    border-right: 1px solid #E0E0E0;
-
 }
 
 .image {
